@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — AdHunt</title>
+<meta name="description" content="Learn about AdHunt — the team, story, values and how we work to find the best talent in affiliate and adtech.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ── About page extras ─────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.team-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px 28px;
+  text-align: center;
+  transition: border-color .25s, transform .25s;
+}
+.team-card:hover { border-color: var(--amber); transform: translateY(-4px); }
+.avatar-placeholder {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px; font-weight: 700;
+  color: #fff;
+  margin: 0 auto 18px;
+  letter-spacing: 1px;
+}
+.team-card .member-name {
+  font-size: 17px; font-weight: 700;
+  color: var(--txt);
+  margin: 0 0 4px;
+}
+.team-card .member-role {
+  font-size: 13px;
+  color: var(--amber);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.team-card .member-bio {
+  font-size: 14px;
+  color: var(--txt-dim);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.value-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: border-color .25s;
+}
+.value-card:hover { border-color: var(--amber); }
+.value-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  display: block;
+}
+.value-card h3 {
+  font-size: 17px; font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--txt);
+}
+.value-card p {
+  font-size: 14.5px;
+  color: var(--txt-dim);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+  counter-reset: steps;
+}
+.process-step {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+}
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.process-step h3 {
+  font-size: 18px; font-weight: 700;
+  color: var(--txt);
+  margin: 0 0 10px;
+}
+.process-step p {
+  font-size: 14.5px;
+  color: var(--txt-dim);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.story-section .story-body {
+  max-width: 720px;
+}
+.story-section .story-body p {
+  font-size: 16px;
+  color: var(--txt-dim);
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="assets/logo-icon.svg" alt="" class="logo-icon"><span class="logo-text"><span class="logo-ad">AD</span><span class="logo-hunt">HUNT</span></span></a>
+    <nav class="nav-links">
+      <a href="vacancies.html"><span data-en>Vacancies</span><span data-ru>Вакансии</span></a>
+      <a href="consulting.html"><span data-en>Consulting</span><span data-ru>Консалтинг</span></a>
+      <a href="blog.html"><span data-en>Blog</span><span data-ru>Блог</span></a>
+      <a href="about.html" class="active"><span data-en>About</span><span data-ru>О нас</span></a>
+    </nav>
+    <div class="nav-right">
+      <div class="theme-toggle">
+        <button data-theme-set="light" aria-label="Light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <button data-theme-set="dark" aria-label="Dark theme"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      </div>
+      <div class="lang"><button data-lang="en">EN</button><button data-lang="ru">RU</button></div>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px;"><span data-en>Get started</span><span data-ru>Начать</span></a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow"><span data-en>Who we are</span><span data-ru>Кто мы</span></span>
+    <h1><span data-en>About AdHunt</span><span data-ru>О компании AdHunt</span></h1>
+    <p><span data-en>A recruitment agency built from inside the affiliate and adtech world. We know the roles, the people, and the businesses that need them.</span><span data-ru>Рекрутинговое агентство, построенное изнутри мира affiliate и adtech. Мы знаем роли, людей и компании, которым они нужны.</span></p>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="section" data-reveal>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span data-en>Our team</span><span data-ru>Наша команда</span></span>
+      <h2><span data-en>The people behind AdHunt</span><span data-ru>Люди, стоящие за AdHunt</span></h2>
+      <p><span data-en>Recruiters and industry insiders who understand your market and speak the same language as your candidates.</span><span data-ru>Рекрутеры и инсайдеры отрасли, которые понимают ваш рынок и говорят с кандидатами на одном языке.</span></p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card" data-reveal>
+        <div class="avatar-placeholder" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4)">AB</div>
+        <p class="member-name"><span data-en>[Name Placeholder]</span><span data-ru>[Имя]</span></p>
+        <p class="member-role"><span data-en>[Role]</span><span data-ru>[Должность]</span></p>
+        <p class="member-bio"><span data-en>[Bio placeholder — short description of this team member's background and expertise in affiliate / adtech recruitment.]</span><span data-ru>[Заглушка биографии — краткое описание опыта и экспертизы этого участника команды в рекрутинге affiliate / adtech.]</span></p>
+      </div>
+
+      <div class="team-card" data-reveal>
+        <div class="avatar-placeholder" style="background: linear-gradient(135deg, #f97316, #ec4899)">CD</div>
+        <p class="member-name"><span data-en>[Name Placeholder]</span><span data-ru>[Имя]</span></p>
+        <p class="member-role"><span data-en>[Role]</span><span data-ru>[Должность]</span></p>
+        <p class="member-bio"><span data-en>[Bio placeholder — short description of this team member's background and expertise in affiliate / adtech recruitment.]</span><span data-ru>[Заглушка биографии — краткое описание опыта и экспертизы этого участника команды в рекрутинге affiliate / adtech.]</span></p>
+      </div>
+
+      <div class="team-card" data-reveal>
+        <div class="avatar-placeholder" style="background: linear-gradient(135deg, #14b8a6, #6366f1)">EF</div>
+        <p class="member-name"><span data-en>[Name Placeholder]</span><span data-ru>[Имя]</span></p>
+        <p class="member-role"><span data-en>[Role]</span><span data-ru>[Должность]</span></p>
+        <p class="member-bio"><span data-en>[Bio placeholder — short description of this team member's background and expertise in affiliate / adtech recruitment.]</span><span data-ru>[Заглушка биографии — краткое описание опыта и экспертизы этого участника команды в рекрутинге affiliate / adtech.]</span></p>
+      </div>
+
+      <div class="team-card" data-reveal>
+        <div class="avatar-placeholder" style="background: linear-gradient(135deg, #06b6d4, #f97316)">GH</div>
+        <p class="member-name"><span data-en>[Name Placeholder]</span><span data-ru>[Имя]</span></p>
+        <p class="member-role"><span data-en>[Role]</span><span data-ru>[Должность]</span></p>
+        <p class="member-bio"><span data-en>[Bio placeholder — short description of this team member's background and expertise in affiliate / adtech recruitment.]</span><span data-ru>[Заглушка биографии — краткое описание опыта и экспертизы этого участника команды в рекрутинге affiliate / adtech.]</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY STORY -->
+<section class="section story-section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head story-body" data-reveal>
+      <span class="eyebrow"><span data-en>Our story</span><span data-ru>Наша история</span></span>
+      <h2><span data-en>Built from within the industry</span><span data-ru>Созданы внутри индустрии</span></h2>
+      <p><span data-en>[PLACEHOLDER — First paragraph of the company story. Describe how AdHunt was founded, the background of the founders in affiliate marketing and adtech, and what gap in the market they set out to fill. Approximately 3–4 sentences of engaging, authentic narrative.]</span><span data-ru>[ЗАГЛУШКА — Первый абзац истории компании. Опишите, как AdHunt была основана, каков бэкграунд основателей в affiliate-маркетинге и adtech, и какую нишу на рынке они решили занять. Примерно 3–4 предложения увлекательного, аутентичного повествования.]</span></p>
+      <p><span data-en>[PLACEHOLDER — Second paragraph continuing the story. Describe growth milestones, the team that has formed, key markets served (Europe, CIS, LATAM, SEA), and the vision going forward. Keep the tone confident but grounded in real industry knowledge.]</span><span data-ru>[ЗАГЛУШКА — Второй абзац, продолжающий историю. Опишите вехи роста, сформировавшуюся команду, ключевые рынки (Европа, СНГ, LATAM, ЮВА) и видение на будущее. Сохраняйте уверенный, но обоснованный тон.]</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES SECTION -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span data-en>Our values</span><span data-ru>Наши ценности</span></span>
+      <h2><span data-en>What drives us every day</span><span data-ru>Что нас движет каждый день</span></h2>
+    </div>
+    <div class="values-grid">
+
+      <div class="value-card" data-reveal>
+        <span class="value-icon">🎯</span>
+        <h3><span data-en>Precision over volume</span><span data-ru>Точность, а не объём</span></h3>
+        <p><span data-en>[PLACEHOLDER — Describe this value: we prioritise finding exactly the right person over sending a flood of CVs. Quality candidates only.]</span><span data-ru>[ЗАГЛУШКА — Опишите эту ценность: мы ставим точность подбора выше объёма отправленных резюме. Только качественные кандидаты.]</span></p>
+      </div>
+
+      <div class="value-card" data-reveal>
+        <span class="value-icon">🔍</span>
+        <h3><span data-en>Deep domain knowledge</span><span data-ru>Глубокая экспертиза в домене</span></h3>
+        <p><span data-en>[PLACEHOLDER — Describe this value: our team has worked inside affiliate and adtech companies, not just alongside them. That insider perspective makes all the difference.]</span><span data-ru>[ЗАГЛУШКА — Опишите эту ценность: наша команда работала внутри affiliate и adtech-компаний, а не просто рядом с ними. Этот инсайдерский взгляд меняет всё.]</span></p>
+      </div>
+
+      <div class="value-card" data-reveal>
+        <span class="value-icon">🤝</span>
+        <h3><span data-en>Long-term partnership</span><span data-ru>Долгосрочное партнёрство</span></h3>
+        <p><span data-en>[PLACEHOLDER — Describe this value: we are not transactional. We build lasting relationships with clients and candidates, supporting both sides beyond the placement.]</span><span data-ru>[ЗАГЛУШКА — Опишите эту ценность: мы не транзакционны. Выстраиваем долгосрочные отношения с клиентами и кандидатами, поддерживая обе стороны после трудоустройства.]</span></p>
+      </div>
+
+      <div class="value-card" data-reveal>
+        <span class="value-icon">⚡</span>
+        <h3><span data-en>Speed with substance</span><span data-ru>Скорость с качеством</span></h3>
+        <p><span data-en>[PLACEHOLDER — Describe this value: 17 days to close is our average because we move fast without cutting corners — structured process, clear communication, zero ghosting.]</span><span data-ru>[ЗАГЛУШКА — Опишите эту ценность: 17 дней на закрытие в среднем — мы работаем быстро, не срезая углы: структурированный процесс, чёткая коммуникация, без исчезновений.]</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK — PROCESS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span data-en>How we work</span><span data-ru>Как мы работаем</span></span>
+      <h2><span data-en>Four steps from brief to offer</span><span data-ru>Четыре шага от брифа до оффера</span></h2>
+    </div>
+    <div class="process-list">
+
+      <div class="process-step" data-reveal>
+        <div class="step-num">01 — <span data-en>Brief</span><span data-ru>Бриф</span></div>
+        <h3><span data-en>Brief</span><span data-ru>Бриф</span></h3>
+        <p><span data-en>[PLACEHOLDER — We run a deep intake call with the hiring team to understand the role, the team structure, the culture, the stack, and must-have vs. nice-to-have. No templated forms.]</span><span data-ru>[ЗАГЛУШКА — Проводим глубокий интейк-звонок с командой найма, чтобы понять роль, структуру команды, культуру, стек и обязательные vs. желательные требования. Никаких шаблонных форм.]</span></p>
+      </div>
+
+      <div class="process-step" data-reveal>
+        <div class="step-num">02 — <span data-en>Search</span><span data-ru>Поиск</span></div>
+        <h3><span data-en>Search</span><span data-ru>Поиск</span></h3>
+        <p><span data-en>[PLACEHOLDER — We activate our network and sourcing channels across LinkedIn, Telegram, and our private candidate database built over 3+ years in the industry. Active, not passive.]</span><span data-ru>[ЗАГЛУШКА — Активируем нашу сеть и каналы поиска: LinkedIn, Telegram и собственная база кандидатов, накопленная за 3+ года в индустрии. Активный поиск, не пассивный.]</span></p>
+      </div>
+
+      <div class="process-step" data-reveal>
+        <div class="step-num">03 — <span data-en>Interview</span><span data-ru>Интервью</span></div>
+        <h3><span data-en>Interview</span><span data-ru>Интервью</span></h3>
+        <p><span data-en>[PLACEHOLDER — Every shortlisted candidate goes through a structured interview with us before reaching the client. We verify skills, motivation, expectations and culture fit — saving the client's time.]</span><span data-ru>[ЗАГЛУШКА — Каждый кандидат из шортлиста проходит структурированное интервью с нами до передачи клиенту. Проверяем навыки, мотивацию, ожидания и культурное соответствие — экономим время клиента.]</span></p>
+      </div>
+
+      <div class="process-step" data-reveal>
+        <div class="step-num">04 — <span data-en>Offer</span><span data-ru>Оффер</span></div>
+        <h3><span data-en>Offer</span><span data-ru>Оффер</span></h3>
+        <p><span data-en>[PLACEHOLDER — We manage offer negotiation, help align expectations on both sides, and stay in contact through the probation period. Our 90-day replacement guarantee means we are invested in long-term success.]</span><span data-ru>[ЗАГЛУШКА — Управляем переговорами по офферу, помогаем согласовать ожидания обеих сторон и остаёмся на связи на протяжении испытательного срока. Наша 90-дневная гарантия замены означает нашу вовлечённость в долгосрочный результат.]</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="section" style="padding-top:0;padding-bottom:80px;">
+  <div class="wrap">
+    <div class="cta-band" data-reveal>
+      <h2><span data-en>Ready to find the right people?</span><span data-ru>Готовы найти нужных людей?</span></h2>
+      <p><span data-en>Tell us what you're hiring for and we'll get to work. Fast sourcing, quality candidates, 90-day guarantee.</span><span data-ru>Расскажите, кого вы нанимаете, и мы приступим к работе. Быстрый поиск, качественные кандидаты, 90-дневная гарантия.</span></p>
+      <a href="index.html#contact" class="btn btn-primary"><span data-en>Get in touch</span><span data-ru>Связаться с нами</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/app.js"></script>
+<script src="assets/footer.js"></script>
+</body>
+</html>

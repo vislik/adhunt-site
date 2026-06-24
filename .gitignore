@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Local preview / dev config
+.claude/
+
+# Editor
+.vscode/
+.idea/
